@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\restaurantcontroller;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\commandecontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,18 +15,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('posts');
-});
 
-Route::get('post', function () {
-    return view('post');
-});
+Route::get('/restaurants/create', [RestaurantController::class, 'create'])->name('restaurants.create');
+Route::post('/restaurants/store', [RestaurantController::class, 'store'])->name('restaurants.store');
 
-Route::get('posta', function () {
-    return view('posta');
-});
 
-Route::get('postb', function () {
-    return view('postb');
-});
+
+Route::get('/commande/create',[commandecontroller::class,'create'])->name('commande.create');
+Route::post('/commande/store',[commandecontroller::class,'store'])->name('commande.store');
+
+
