@@ -7,7 +7,7 @@
     <title>My blog</title>
     <link rel="stylesheet" href="/app.css">
 </head>
-
+<center>
 <body>
     <fieldset>
         @if (session('success'))
@@ -43,6 +43,7 @@
             </table>
         </form>
     </fieldset>
+</center>
 </body>
 
 </html>

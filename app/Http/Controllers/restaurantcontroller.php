@@ -11,6 +11,12 @@ class restaurantcontroller extends Controller
     {
         return view('restaurants.create');
     }
+    public function index()
+    {
+        $restaurant = restaurant::all();
+        return view('restaurants.index', ['restaurant'=> $restaurant]);
+
+    }
 
     public function store(Request $request)
     {
@@ -31,4 +37,33 @@ class restaurantcontroller extends Controller
 
         return redirect()->route('restaurants.create')->with('success', 'Restaurant created successfully!');
     }
+
+    public function edit(restaurant $restaurant)
+    {
+
+        return view('restaurants.edit',['restaurant' => $restaurant]);
+    }
+
+    public function update(restaurant $restaurant,Request $request)
+    {
+
+        $data = $request->validate([
+            'nom' => 'required',
+            'adresse' => 'required',
+            'téléphone' => 'required',
+        ]);
+        $restaurant->update($data);
+        return redirect(route('restaurant.index'))->with('success','restaurant update successfully');
+    }
+
+
+    public function delete(restaurant $restaurant)
+    {
+        $restaurant->delete();
+        return redirect(route('restaurant.index'))->with('success','restaurant deleted succesfully');
+
+    }
+
+
+
 }
