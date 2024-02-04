@@ -43,3 +43,7 @@ Route::delete('restaurant/{restaurant}/delete',[restaurantcontroller::class,'del
 Route::delete('commande/{commande}/delete',[commandecontroller::class,'delete'])->name('commande.delete');
 
 
+Route::get('/', function () {
+    return view('home');
+})->name('home');
+

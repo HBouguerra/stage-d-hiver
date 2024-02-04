@@ -1,80 +1,210 @@
-body{
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
 
-        padding: 0px;
-        margin: 0px;
-        }
-
-     fieldset{
+fieldset {
 
 
-        margin-top: 70px;
+    margin-top: 70px;
 
-        width: 27%;
+    width: 27%;
 
-        background-color: #318CE7;
+    background-color: #318CE7;
 
-        box-shadow: 5px 5px 20px 1px  rgb(85, 85, 85);
+    box-shadow: 5px 5px 20px 1px rgb(85, 85, 85);
 
-        border: 0px;
+    border: 0px;
 
-        padding-left: 10px;
-        border-radius: 10px 10px 10px 10px;
+    padding-left: 10px;
+    border-radius: 10px 10px 10px 10px;
 
-        color: white;
+    color: white;
 
-        height: 430px;
+    height: 430px;
 
-        td{letter-spacing: 0 px;}
-     }
+    td {
+        letter-spacing: 0 px;
+    }
+}
 
-        h1{
-        font-family: andalus;
-        letter-spacing: 3px;
-        color:white;
-        }
-        hr{
+h1 {
+    font-family: andalus;
+    letter-spacing: 3px;
+    color: white;
+}
 
-            border: 5px solid white; border-radius: 10px;
+hr {
 
-            width: 40%;
+    border: 5px solid white;
+    border-radius: 10px;
 
-        }
+    width: 40%;
 
-         ul li {margin-left: 20px; color: white;}
+}
 
-        #submit{
+ul li {
+    margin-left: 20px;
+    color: white;
+}
 
-         margin: 20px 35px;
+#submit {
 
-         color: #318CE7;
+    margin: 20px 35px;
 
-         background-color: white;
+    color: #318CE7;
 
-         width: 80%;
+    background-color: white;
 
-         font-size: 17px;
+    width: 80%;
 
-         border-radius: 20px;
+    font-size: 17px;
 
-         border: 1px solid white;
-         padding: 7;
+    border-radius: 20px;
 
-         }
+    border: 1px solid white;
+    padding: 7;
 
-            #submit:hover{
+}
 
-            color: white;
+#submit:hover {
 
-            background-color: #318CE7;
+    color: white;
 
-             }
+    background-color: #318CE7;
 
-             input{
-                font-size: 16px;
-                border: none;
-                outline: non;
-                background: none;
-                border-bottom: 1px solid white;
-                color: white;
-                width: 100%;
-             }
+}
+
+input {
+    font-size: 16px;
+    border: none;
+    outline: non;
+    background: none;
+    border-bottom: 1px solid white;
+    color: white;
+    width: 100%;
+}
+
+footer#main-footer {
+    /* Positionne le footer en bas de la page */
+    position: fixed;
+    /* ou "position: absolute;" selon votre besoin */
+    bottom: 0;
+    width: 100%;
+    background-color: #f8f8f8;
+    /* Ajoutez un arrière-plan au footer si nécessaire */
+    padding: 10px;
+    /* Ajoutez un rembourrage si nécessaire */
+    text-align: center;
+}
+
+.wrapper .sidebar {
+    background: rgb(5, 68, 104);
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 225px;
+    height: 100%;
+    padding: 20px 0;
+    transition: all 0.5s ease;
+}
+
+.wrapper .sidebar .profile {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.wrapper .sidebar .profile img {
+    display: block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.wrapper .sidebar .profile h3 {
+    color: #ffffff;
+    margin: 10px 0 5px;
+}
+
+.wrapper .sidebar .profile p {
+    color: rgb(206, 240, 253);
+    font-size: 14px;
+}
+.wrapper .sidebar ul li a{
+    display: flex;
+    padding: 13px 30px;
+    border-bottom: 1px solid #10558d;
+    color: rgb(241, 237, 237);
+    font-size: 16px;
+    position: relative;
+    text-decoration: none;
+
+}
+
+.wrapper .sidebar ul li a .icon{
+    color: #dee4ec;
+    width: 30px;
+    display: inline-block;
+    text-decoration: none;
+}
+.wrapper .sidebar ul li a:hover,
+.wrapper .sidebar ul li a.active{
+    color: #0c7db1;
+    background:white;
+    border-right: 2px solid rgb(5, 68, 104);
+    text-decoration: none;
+}
+
+.wrapper .sidebar ul li a:hover .icon,
+.wrapper .sidebar ul li a.active .icon{
+    color: #0c7db1;
+}
+
+.wrapper .sidebar ul li a:hover:before,
+.wrapper .sidebar ul li a.active:before{
+    display: block;
+}
+.wrapper .section{
+    width: calc(100% - 225px);
+    margin-left: 225px;
+    transition: all 0.5s ease;
+}
+
+.wrapper .section .top_navbar{
+    background: rgb(7, 105, 185);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+
+}
+
+.wrapper .section .top_navbar .hamburger a{
+    font-size: 28px;
+    color: #f4fbff;
+}
+
+.wrapper .section .top_navbar .hamburger a:hover{
+    color: #a2ecff;
+}
+
+body.active .wrapper .sidebar{
+    left: -225px;
+}
+
+body.active .wrapper .section{
+    margin-left: 0;
+    width: 100%;
+}
+
+a .active {
+    text-decoration: none;
+}
+
+.container.text-center {
+    justify-items: center;
+    margin-right: 0px;
+}
